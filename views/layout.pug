@@ -1,0 +1,64 @@
+doctype html
+head
+  title Photon &mdash; Colorlib Website Template
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(href='https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700' rel='stylesheet')
+  link(rel='stylesheet' href='fonts/icomoon/style.css')
+  link(rel='stylesheet' href='css/bootstrap.min.css')
+  link(rel='stylesheet' href='css/magnific-popup.css')
+  link(rel='stylesheet' href='css/jquery-ui.css')
+  link(rel='stylesheet' href='css/owl.carousel.min.css')
+  link(rel='stylesheet' href='css/owl.theme.default.min.css')
+  link(rel='stylesheet' href='css/lightgallery.min.css')
+  link(rel='stylesheet' href='css/bootstrap-datepicker.css')
+  link(rel='stylesheet' href='fonts/flaticon/font/flaticon.css')
+  link(rel='stylesheet' href='css/swiper.css')
+  link(rel='stylesheet' href='css/aos.css')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='stylesheet' href='compiled/flipclock.css')
+.site-wrap
+  .site-mobile-menu
+    .site-mobile-menu-header
+      .site-mobile-menu-close.mt-3
+        span.icon-close2.js-menu-toggle
+    .site-mobile-menu-body
+
+    block content
+
+script(src='js/jquery-3.3.1.min.js')
+script(src='js/jquery-migrate-3.0.1.min.js')
+script(src='js/jquery-ui.js')
+script(src='js/popper.min.js')
+script(src='js/bootstrap.min.js')
+script(src='js/owl.carousel.min.js')
+script(src='js/jquery.stellar.min.js')
+script(src='js/jquery.countdown.min.js')
+script(src='js/jquery.magnific-popup.min.js')
+script(src='js/bootstrap-datepicker.min.js')
+script(src='js/swiper.min.js')
+script(src='js/aos.js')
+script(src='js/picturefill.min.js')
+script(src='js/lightgallery-all.min.js')
+script(src='js/jquery.mousewheel.min.js')
+script(src='compiled/flipclock.js')
+script(src='js/main.js')
+script.
+  $(document).ready(function(){
+  $('#lightgallery').lightGallery();
+  });
+script(type='text/javascript').
+  var clock;
+  $(document).ready(function() {
+  // Grab the current date
+  var currentDate = new Date();
+  // Set some date in the past. In this case, it's always been since Jan 1
+  //var pastDate  = new Date(currentDate.getFullYear(), 0, 1);
+  var pastDate  = new Date('2022-01-01 00:00:00');
+  // Calculate the difference in seconds between the future and current date
+  var diff = pastDate.getTime() / 1000 - currentDate.getTime() / 1000;
+  // Instantiate a coutdown FlipClock
+  clock = $('.clock').FlipClock(diff, {
+  clockFace: 'DailyCounter'
+  });
+  });

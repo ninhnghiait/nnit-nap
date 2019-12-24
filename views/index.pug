@@ -1,0 +1,74 @@
+doctype html
+head
+  title Photon &mdash; Colorlib Website Template
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+  link(href='https://fonts.googleapis.com/css?family=Josefin+Sans:300i,400,700' rel='stylesheet')
+  link(rel='stylesheet' href='fonts/icomoon/style.css')
+  link(rel='stylesheet' href='css/bootstrap.min.css')
+  link(rel='stylesheet' href='css/magnific-popup.css')
+  link(rel='stylesheet' href='css/jquery-ui.css')
+  link(rel='stylesheet' href='css/owl.carousel.min.css')
+  link(rel='stylesheet' href='css/owl.theme.default.min.css')
+  link(rel='stylesheet' href='css/lightgallery.min.css')
+  link(rel='stylesheet' href='css/bootstrap-datepicker.css')
+  link(rel='stylesheet' href='fonts/flaticon/font/flaticon.css')
+  link(rel='stylesheet' href='css/swiper.css')
+  link(rel='stylesheet' href='css/aos.css')
+  link(rel='stylesheet' href='css/style.css')
+  link(rel='stylesheet' href='compiled/flipclock.css')
+.site-wrap
+  .site-mobile-menu
+    .site-mobile-menu-header
+      .site-mobile-menu-close.mt-3
+        span.icon-close2.js-menu-toggle
+    .site-mobile-menu-body
+  .site-section(data-aos='fade')
+    .container-fluid
+      .row(style='justify-content: flex-end;!important;')
+        .col-md-7
+          .row.mb-5
+            .col-12
+              .clock(style='margin:2em;')
+      #lightgallery.row
+        each image in images
+          .col-sm-6.col-md-4.col-lg-3.col-xl-2.item(data-aos='fade' data-src=image.url data-sub-html=image.html)
+            a(href='#')
+              img.img-fluid(src=image.url alt='IMage')
+
+script(src='js/jquery-3.3.1.min.js' type='text/javascript')
+script(src='js/jquery-migrate-3.0.1.min.js' type='text/javascript')
+script(src='js/jquery-ui.js' type='text/javascript')
+script(src='js/popper.min.js' type='text/javascript')
+script(src='js/bootstrap.min.js' type='text/javascript')
+script(src='js/owl.carousel.min.js' type='text/javascript')
+script(src='js/jquery.stellar.min.js' type='text/javascript')
+script(src='js/jquery.countdown.min.js' type='text/javascript')
+script(src='js/jquery.magnific-popup.min.js' type='text/javascript')
+script(src='js/bootstrap-datepicker.min.js' type='text/javascript')
+script(src='js/swiper.min.js' type='text/javascript')
+script(src='js/aos.js' type='text/javascript')
+script(src='js/picturefill.min.js' type='text/javascript')
+script(src='js/lightgallery-all.min.js' type='text/javascript')
+script(src='js/jquery.mousewheel.min.js' type='text/javascript')
+script(src='compiled/flipclock.js' type='text/javascript')
+script(src='js/main.js' type='text/javascript')
+script.
+  $(document).ready(function(){
+  $('#lightgallery').lightGallery();
+  });
+script(type='text/javascript').
+  var clock;
+  $(document).ready(function() {
+  // Grab the current date
+  var currentDate = new Date();
+  // Set some date in the past. In this case, it's always been since Jan 1
+  //var pastDate  = new Date(currentDate.getFullYear(), 0, 1);
+  var pastDate  = new Date('2022-01-01 00:00:00');
+  // Calculate the difference in seconds between the future and current date
+  var diff = pastDate.getTime() / 1000 - currentDate.getTime() / 1000;
+  // Instantiate a coutdown FlipClock
+  clock = $('.clock').FlipClock(diff, {
+  clockFace: 'DailyCounter'
+  });
+  });
